@@ -6,7 +6,7 @@
     <string>https://github.com/ashyisme/applog</string>
     <key>ProgramArguments</key>
     <array>
-      <string>PATH-TO-REPOSITORY/applog.sh</string>
+      <string>PATHTOREPOSITORY/applog.sh</string>
     </array>
     <key>StandardErrorPath</key>
     <string>/dev/null</string>
