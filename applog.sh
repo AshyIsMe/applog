@@ -1,6 +1,8 @@
 #!/bin/bash
 
-echo `date`, `osascript <<APPLESCRIPT_HEREDOC
+define(){ IFS='\n' read -r -d '' ${1} || true; }
+
+define APPLESCRIPT <<EOF
 global frontApp, frontAppName, windowTitle
 
 set windowTitle to ""
@@ -15,5 +17,11 @@ tell application "System Events"
 end tell
 
 return {frontAppName, windowTitle}
-APPLESCRIPT_HEREDOC
-`
+EOF
+
+
+while true; do
+  echo `date`, `osascript -e "$APPLESCRIPT" ` >> ~/applog.dat
+  #echo "$APPLESCRIPT"
+  sleep 1
+done
