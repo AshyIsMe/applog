@@ -1,5 +1,5 @@
 #applog
-Tracking what apps you use all day every day!
+Tracking which apps you use all day every day!
 This is intended to be something similar to https://github.com/jradavenport/batlog but for application usage rather than battery usage.
 
 #Install guide
