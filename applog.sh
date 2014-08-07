@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#Define a variable from a heredoc. 
+#Stolen from http://stackoverflow.com/a/8088167
 define(){ IFS='\n' read -r -d '' ${1} || true; }
 
 define APPLESCRIPT <<EOF
@@ -22,6 +24,5 @@ EOF
 
 while true; do
   echo `date`, `osascript -e "$APPLESCRIPT" ` >> ~/applog.dat
-  #echo "$APPLESCRIPT"
   sleep 1
 done
