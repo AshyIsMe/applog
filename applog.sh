@@ -23,6 +23,9 @@ EOF
 
 
 while true; do
-  echo `date`, `osascript -e "$APPLESCRIPT" ` >> ~/applog.dat
+  CURRENTAPP=`osascript -e "$APPLESCRIPT"`
+  if [ ! -z "$CURRENTAPP" ]; then
+    echo `date`, `osascript -e "$APPLESCRIPT" ` >> ~/applog.dat
+  fi
   sleep 1
 done
